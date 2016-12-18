@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<!-- Programmer: Demetri Enriquez -->
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	
+	<title>YourApp | Assignment 9</title>
+	
+	<meta name="description" content="Web App Dashboard | Treehouse Front End Web Degree Assignment #9">
+	
+  <!-- Mobile-friendly viewport -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Nunito+Sans|Roboto:300" rel="stylesheet">
+
+   <!-- Style sheet link -->
+   	<link href="css/reset.css" rel="stylesheet" media="all">
+	<link href="css/main.css" rel="stylesheet" media="all">
+	<link href="css/toggle-switch.css" rel="stylesheet" media="all">
+	
+</head>
+<body>
+<div class="allwrap">
+
+	<header>
+		<div class="brand"><a>Your<span>App</span></a></div>
+		<div class="top-tools">
+			<div class="notifications">
+				<a href="#" onclick="toggle_visibility('nbox');"><img src="icons/icon-bell.svg" alt="notifications icon"></a>
+				<div class="dot"></div>
+			</div>
+
+			<div class="user">
+				<img src="user_images/1.jpg" alt="user profile image">
+				<p>John Doe</p>
+			</div>
+		</div>
+	</header>
+
+	<div id="nbox" class="nbox"> <!-- Notifications Box -->
+		<ul>
+			<li>
+				<a><img src="user_images/71.jpg" alt="#">
+				<p>You have a new message from <span>Stephanie LaMonde</span></p></a>
+			</li>
+			<li>
+				<a><img src="user_images/128-1.jpg" alt="#">
+				<p><span>Gunther Sameniego </span>tagged you in a post</p></a>
+			</li>
+			<li>
+				<a><img src="user_images/7.jpg" alt="#">
+				<p>You have a new message from <span>Alex Benevidez</span></p></a>
+			</li>
+			<li>
+				<a><img src="user_images/14.jpg" alt="#">
+				<p><span>Marylin Krauss</span> sent you an event invite: <span>YourApp Meetup</span></p></a>
+			</li>
+		</ul>
+	</div>
+
+	<div class="content-wrap">
+		<aside>
+			<nav>
+				<ul>
+					<li class="active"><a href="#"><img src="icons/icon-dashboard.svg" alt="dashboard icon"></a></li>
+					<li><a href="#"><img src="icons/icon-members.svg" alt="members icon"></a></li>
+					<li><a href="#"><img src="icons/icon-visits.svg" alt="visits icon"></a></li>
+					<li><a href="#"><img src="icons/icon-settings.svg" alt="settings icon"></a></li>
+				</ul>
+			</nav>
+		</aside>
+
+	<!-- Main Body Section -->
+		<main>
+			<div class="top-section">
+				<div class="top-tab">
+					<div class="dashboard"><h1>Dashboard</h1></div>
+					<div class="search-container">
+						<input type="search" placeholder="Search" size="30" name="search" id="search" class="search">
+						<img src="icons/search.png" alt="">
+					</div>
+				</div>
+				<div class="alert">
+				  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+				  <p class="alert-text"><span class="first-word">Alert:</span>A new tool has been added to your dashboard. Check the Settings Page to activate and customize it.
+				</div>
+			</div>
+
+			<div class="widget-section">
+
+			<!-- Large Line Chart Section-->
+				<div class="traffic">
+					<h2>Traffic</h2>
+
+					<div class="radio-toolbar">
+				        <input type="radio" id="l2" name="colorRadio" value="red"><label class="linelegend" for="l2">Monthly</label>
+				        <input type="radio" id="l1" name="colorRadio" value="green"><label class="linelegend" for="l1">Weekly</label>
+				        <input type="radio" id="l3" name="colorRadio" value="blue"><label class="linelegend" for="l3">Daily</label>
+				        <input type="radio" id="l4" name="colorRadio" value="purple"><label class="linelegend" for="l4">Hourly</label>
+				    </div>
+
+					<canvas id="lineChart" class="red box"></canvas>
+					<canvas id="lineChart2" class="green box hide"></canvas>
+					<canvas id="lineChart3" class="blue box hide"></canvas>
+					<canvas id="lineChart4" class="purple box hide"></canvas>
+				</div>
+
+				<!-- Small Charts -->
+
+				<div class="small-widgets">
+					<div class="daily-traffic">
+						<h2>Daily Traffic</h2>
+						<canvas id="barChart" height="100" width="200"></canvas>
+					</div>
+					<div class="mobile-users">
+						<h2>Mobile Users</h2>
+						<canvas id="pieChart" height="100" width="200"></canvas>
+					</div>
+				</div>	
+				<div class="social-stats">
+					<h2>Social Stats</h2>
+					<div class="social-holder">
+
+						<div class="social-button">
+							<div class="icon-frame">
+								<img src="icons/icon-twitter.svg" alt="">
+								<div class="social-text">
+									<p class="social-title">Twitter</p>
+									<p class="number">10,456</p>
+								</div>
+							</div>
+						</div>
+						<div class="social-button">
+							<div class="icon-frame">
+								<img src="icons/icon-facebook.svg" alt="">
+								<div class="social-text">
+									<p class="social-title">Facebook</p>
+									<p class="number">7,278</p>
+								</div>
+							</div>
+						</div>
+						<div class="social-button">
+							<div class="icon-frame">
+								<img src="icons/icon-google-plus.svg" alt="">
+								<div class="social-text">
+									<p class="social-title">Google+</p>
+									<p class="number">2,412</p>
+								</div>
+							</div>
+						</div>
+						<div class="social-button">
+							<div class="icon-frame">
+								<img src="icons/tumblr-icon-1.svg" alt="">
+								<div class="social-text">
+									<p class="social-title">Tumbler</p>
+									<p class="number">4,501</p>
+								</div>
+							</div>
+						</div>
+						<div class="social-button">
+							<div class="icon-frame">
+								<img src="icons/pintrest-icon.svg" alt="">
+								<div class="social-text">
+									<p class="social-title">Pintrest</p>
+									<p class="number">6,244</p>
+								</div>
+							</div>
+						</div>
+						<div class="social-button">
+							<div class="icon-frame">
+								<img src="icons/rss.svg" alt="">
+								<div class="social-text">
+									<p class="social-title">RSS</p>
+									<p class="number">5,937</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="bottom-widgets">
+					<div class="members">
+						<h2>New Members</h2>
+						<div class="member-tab">
+							<img src="user_images/36.jpg" alt="#">
+							<div class="member-text">
+								<p class="name">Theresa Jones</p>
+								<a href="#"><p class="email">tj20@email.com</p></a>
+							</div>
+							<p class="date">10/15/16</p>
+						</div>
+						<div class="member-tab">
+							<img src="user_images/85.jpg" alt="#">
+							<div class="member-text">
+								<p class="name">Dan Simmons</p>
+								<a href="#"><p class="email">sample12@gmail.com</p></a>
+							</div>
+							<p class="date">10/15/16</p>
+						</div>
+						<div class="member-tab">
+							<img src="user_images/43.jpg" alt="#">
+							<div class="member-text">
+								<p class="name">Vanisse Marquez</p>
+								<a href="#"><p class="email">vanisse2343@email.com</p></a>
+							</div>
+							<p class="date">10/14/16</p>
+						</div>
+						<div class="member-tab no-border">
+							<img src="user_images/22.jpg" alt="#">
+							<div class="member-text">
+								<p class="name">Thomas Larkins</p>
+								<a href="#"><p class="email">exampleadd@gmail.com</p></a>
+							</div>
+							<p class="date">10/13/16</p>
+						</div>
+
+						<div class="message-user">
+							<h2>Message User</h2>
+							<form id="myForm" method="post" action="#" onsubmit="return validateForm()">
+
+								<input type="search" id="search_user" name="fname" list="datalist1" class="search_user" placeholder="Search for User">
+								<datalist id ="datalist1">
+									<option value="Alex Benevidez">
+									<option value="Amanda Hunsaker">
+									<option value="Dan Simmons">
+									<option value="Gunther Sameniego">
+									<option value="John Doe">
+									<option value="Marilyn Krauss">
+									<option value="Matthew Vale">
+									<option value="Melanie Santangelo">
+									<option value="Sasha Quinn">
+									<option value="Stephanie LaMonde">
+									<option value="Theresa Jones">
+									<option value="Thomas Larkins">
+									<option value="Vanisse Marquez">
+								</datalist>
+
+								<input type="text" id="message_content" class="message_content" name="message" placeholder="Message for User">
+								<button type="submit" value="Submit" class="send">SEND</button>
+							</form>
+						</div>
+					</div>
+
+					<div class="activity">
+						<h2>Recent Activity</h2>
+						<div class="member-tab">
+							<img src="user_images/76.jpg" alt="#">
+							<div class="member-text">
+								<p class="name">Melanie Santangelo added a new post <span><img src="icons/post.png" class="action-icon" alt=""></span></p>
+								<p class="email">12 minutes ago</p>
+							</div>
+							<p class="date">></p>
+						</div>
+						<div class="member-tab">
+							<img src="user_images/75.jpg" alt="#">
+							<div class="member-text">
+								<p class="name">Matthew Vale added uploaded an new project <span><img src="icons/upload-icon.png" class="action-icon lighten-icon" alt=""></span></p>
+								<p class="email">19 minutes ago</p>
+							</div>
+							<p class="date">></p>
+						</div>
+						<div class="member-tab">
+							<img src="user_images/51.jpg" alt="#">
+							<div class="member-text">
+								<p class="name">Sasha Quinn added a new post <span><img src="icons/post.png" class="action-icon" alt=""></span></p>
+								<p class="email">20 minutes ago</p>
+							</div>
+							<p class="date">></p>
+						</div>
+						<div class="member-tab no-border">
+							<img src="user_images/32.jpg" alt="#">
+							<div class="member-text">
+								<p class="name">Amanda Hunsaker uploaded a new video <span><img src="icons/video-icon.png" class="action-icon lighten-icon" alt=""></span></p>
+								<p class="email">22 minutes ago</p>
+							</div>
+							<p class="date">></p>
+						</div>
+
+						<div class="settings">
+							<h2>Settings</h2>
+
+							<div class="toggleHolder">
+							  <p>Send Email Notifications</p>
+							  <label class="switch-light switch-candy switch-ios" onclick="" style="width:100px">
+							    <input type="checkbox" id="checkbox1">
+
+							    <span>
+							      <span>Off</span>
+							      <span>On</span>
+							      <a></a>
+							    </span>
+							  </label>
+							</div>
+
+							<div class="toggleHolder">
+							  <p>Set Profile To Public</p>
+							  <label class="switch-light switch-candy switch-ios" onclick="" style="width:100px">
+							    <input type="checkbox" id="checkbox2">
+
+							    <span>
+							      <span>Off</span>
+							      <span>On</span>
+							      <a></a>
+							    </span>
+							  </label>
+							</div>
+
+							<div class="bottom-box">
+								<select id="edit">
+								  <option value="">Select Timezone</option>
+								  <option value="pacific">Pacific</option>
+								  <option value="mountain">Mountain</option>
+								  <option value="central">Central</option>
+								  <option value="eastern">Eastern</option>
+								</select>
+
+								<button type="button" class="save" id="ReserveerButton1" value="save" onclick="save()">SAVE</button>
+								<button type="button" class="cancel" id="Wisbutton1" value="delete" onclick="wis()">Cancel</button>
+
+							</div>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+
+	</div>
+</div>
+	<!-- JQuery / JS -->
+	<script src="scripts/jquery3.min.js"></script>
+	<script src="scripts/Chart.js"></script>
+	<script src="scripts/app.js"></script>
+	<script src="scripts/chart-script.js"></script>
+
+
+
+</body>
+</html>
